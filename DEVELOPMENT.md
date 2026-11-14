@@ -263,11 +263,11 @@ mvn clean verify
 
 ## Tag and Release a New Version
 
-Activate the GH-workflow with a tag and push:
+Activate the GH-workflow with a signed release request tag and push:
 
 ```shell
-git tag -s v0.0.32 -m 'v0.0.32'
-git push origin tag v0.0.32
+git tag -s release-request/v0.0.32 -m 'Release v0.0.32'
+git push origin release-request/v0.0.32
 ```
 
-The workflow sets the POM version and generates a changelog.
+The workflow sets the POM version, generates a changelog and creates the tag `v0.0.32`.
