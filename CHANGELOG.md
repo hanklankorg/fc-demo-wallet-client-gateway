@@ -5,33 +5,84 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.6.18] - 2026-11-06
-
-### Changed
-
-- Migrate workflows to reusable-ci v3 (#242)
-- Update valkey/valkey docker tag to v9.1.3 (#240)
-
-## [0.6.17] - 2026-11-06
+## [0.6.19] - 2026-11-15
 
 ### Added
 
 - Add client logging (#241)
 - Add wallet-app-build request header (#235)
+- Add lote-providers api operation (#221)
+- Add maintenance window handling (#208)
+- Add client config endpoint (#203)
+- Add wia operation in api-spec (#196)
+- Add key attestation operation in api-spec (#185)
+- Add account key operations in api-spec (#182)
+- Add mdc leak prevention (#179)
+- Add tests and fix account mapping (#178)
+- Add device info request headers (#167)
+- Add codeowners (#159)
+- Add sonarqube analysis (#146)
+- Add more test cases (#141)
+- Add tests for ApiKeyVerifier
+- Add jacoco info (#134)
+- Add opengrep/semgrep ignore file for gitleaks config
+- Add openapi-diff maven plugin (#127)
+- Add openapi linter (#126)
+- Add integration test workflow
+- Add ecosystem integration test
+- Add wua controller test
+- Add wua authentication tests
+- Add more challengeResponseAthentication test
+- Add auth challenge test
+- Add no-op version control linter
+- Add WuaService test
+- Add deprecated annotations
+- Add session id to response body
+- Add swagger header parameters for /account
+- Add auth endpoint to get sessionId deeplink
+- Add more verification to controller test and fix typo
+- Add more tests for oidc solution
+- Add gitleaksignore addition to gitleaksignore
+- Add configuration for pnr claim
+- Add configuration for private jwt audience
+- Add personal identity number as last name to users
+- Add create account v2 with oidc protection
+- Add header info to api doc
+- Add session id auth to swagger
+- Add schema for post challenge openapi
+- Add challenge-response login sessions
+- Add controller to create accounts
+- Add controller layer and improve test coverage
+- Add attestation api endpoints
+- Add more correct swagger doc
+- Add annotation with example post data
+- Add basic validation of WUA request
+- Add swagger auth button and use relative url
+- Add support for front- and backend agreed formats
+- Add spring app with generic downstream service
+- Add missing jar gen to release
+- Add jreleaser for releases
+- Add release notes workflow
+- Add initial project structure and tooling
 
 ### Changed
 
+- Use the lab's Forge CI layer
+- Name the snapshot and release flows as the other projects do
+- Name the snapshot flow release-snapshot-workflow.yml
+- Report SAST findings without failing the pull request
+- Request a release with a release-request tag
+- Leave the Renovate release-age rule out of the SAST gate
+- Migrate workflows to forge-ci
+- Update docker.io/library/eclipse-temurin:27-jdk-alpine docker digest to 63c4f00 (#238)
+- Migrate workflows to reusable-ci v3 (#242)
+- Update valkey/valkey docker tag to v9.1.3 (#240)
 - Update java non-major (#239)
 - Update diggsweden/wallet-ecosystem digest to f017a14 (#237)
 - Update diggsweden/wallet-ecosystem digest to b5e03a2 (#209)
 - Update diggsweden/reusable-ci action to v3 (#218)
 - Apispec cleanup (#234)
 - Fix/sensitive log masking (#229)
-
-## [0.6.16] - 2026-10-27
-
-### Changed
-
 - Drop support for wallet-key and wua (#233)
 - Update java non-major (#231)
 - Update actions/setup-java action to v6.1.0 (#230)
@@ -42,50 +93,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update dependency prettier to v3.9.10 (#225)
 - Update docker.io/library/eclipse-temurin docker tag to v27 (#219)
 - Update java major (#220)
-
-### Removed
-
-- Remove the optional datatype for generated models (#223)
-- Remove webuild from lote providers config (#222)
-
-
-## [0.6.15] - 2026-10-15
-
-### Added
-
-- Add lote-providers api operation (#221)
-
-### Changed
-
 - Bump openapi-generator-maven-plugin to 7.26.0 (#216)
-
-
-## [0.6.14] - 2026-10-13
-
-### Changed
-
 - Implement wallet instance attestation (#214)
 - Update org.wiremock.integrations:wiremock-spring-boot to v4.4.3 (#217)
 - Update actions/setup-java action to v6 (#213)
-
-
-## [0.6.13] - 2026-10-12
-
-### Changed
-
 - Move formatter to validate step (#215)
-
-
-## [0.6.12] - 2026-10-12
-
-### Added
-
-- Add maintenance window handling (#208)
-- Add client config endpoint (#203)
-- Add wia operation in api-spec (#196)
-
-### Changed
-
 - Update org.openapitools:jackson-databind-nullable to v0.2.12 (#212)
 - Update diggsweden/wallet-ecosystem digest to 91e6dd6 (#194)
 - Update actions/checkout action to v7 (#207)
@@ -98,27 +110,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Include clientId in device-states response
 - Update valkey to 9.1.1 (#193)
 - Update eclipse-temurin 25-jdk-alpine digest to 541729c (#102)
-
-### Fixed
-
-- Use jackson3 with openapi client generator (#201)
-- Include clientId in device-states response (#195)
-
-### Removed
-
-- Remove api diff from maven lifecycle due to ssl issues with env(#210)
-- Remove mise paranoid setting (#200)
-
-
-## [0.6.11] - 2026-09-23
-
-### Added
-
-- Add key attestation operation in api-spec (#185)
-- Add account key operations in api-spec (#182)
-
-### Changed
-
 - Update java non-major (#190)
 - Key attestation implementation (#192)
 - Update github actions (#189)
@@ -126,120 +117,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update cgr.dev/chainguard/jre:latest docker digest to df582a7 (#45)
 - Pin diggsweden/wallet-ecosystem action to 6234ba4 (#144)
 - Update tomcat-embed-core to v11.0.25 [security] (#180)
-
-### Fixed
-
-- Raise commit description length limit and shorten maven commit (#186)
-- Revoke account key operations in api-spec (#184)
-
-
-## [0.6.10] - 2026-09-14
-
-### Added
-
-- Add mdc leak prevention (#179)
-
-### Changed
-
 - Hsm retry on recoverable failure (#181)
-
-
-## [0.6.9] - 2026-08-28
-
-### Removed
-
-- Remove default values for api-key (#175)
-
-
-## [0.6.8] - 2026-08-28
-
-### Added
-
-- Add tests and fix account mapping (#178)
-
-### Changed
-
 - Error logging improvements (#177)
-
-### Fixed
-
-- Api spec and log fix (#176)
-
-
-## [0.6.7] - 2026-08-11
-
-### Changed
-
 - Feat/api key rotation (#174)
-
-
-## [0.6.6] - 2026-07-31
-
-### Changed
-
 - Wallet-account api client update (#173)
 - Code refactor and cleanup (#171)
 - Merge pull request #172 from diggsweden/chore/fix-spelling-errors
-
-### Fixed
-
-- Fix minor spelling errors in README
-
-
-## [0.6.5] - 2026-07-28
-
-### Changed
-
 - Generate wallet provider api client (#170)
-
-
-## [0.6.4] - 2026-07-27
-
-### Changed
-
 - Log request and response separately (#169)
-
-
-## [0.6.3] - 2026-07-21
-
-### Added
-
-- Add device info request headers (#167)
-
-### Changed
-
 - Return conflict problem when creating account duplicate (#168)
 - Split path auth into public, api-key, and full-auth tiers (#163)
-
-### Fixed
-
-- Api component test improvements (#166)
-- Api component tests (#165)
-
-
-## [0.6.2] - 2026-07-02
-
-### Removed
-
-- Remove old account clients (#162)
-
-
-## [0.6.1] - 2026-07-01
-
-### Added
-
-- Add codeowners (#159)
-
-### Changed
-
 - Store HSM clientId and stateJws on the account (#160)
 - Bump rest-api-linter to v2.0.0 (#161)
-
-
-## [0.6.0] - 2026-06-12
-
-### Changed
-
 - Replace with generated hsm-api-client (#158)
 - Merge pull request #157 from diggsweden/feat/forward-state-jws-from-r2ps
 - Forward stateJws from R2PS async operation response
@@ -247,60 +136,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Merge pull request #156 from diggsweden/chore/remove-sonarqube
 - Hsm api-operations improvements (#154)
 - Problem response (#153)
-
-### Removed
-
-- Remove sonarqube integration
-
-
-## [0.5.8] - 2026-05-18
-
-### Changed
-
 - Merge pull request #151 from diggsweden/feat/hsm-register-state-response
 - Extend register state response model
-
-
-## [0.5.7] - 2026-05-13
-
-### Fixed
-
-- Fix formatting (#150)
-
-
-## [0.5.6] - 2026-05-13
-
-### Changed
-
 - Update hsm to point to new service (#147)
-
-
-## [0.5.5] - 2026-05-13
-
-### Added
-
-- Add sonarqube analysis (#146)
-- Add more test cases (#141)
-
-### Changed
-
 - Pin actions to commit sha (#148)
 - Update java major (#90)
-
-### Fixed
-
-- Email and personal identity number are now optional (#145)
-- Fix sha (#149)
-
-
-## [0.5.4] - 2026-05-08
-
-### Added
-
-- Add tests for ApiKeyVerifier
-
-### Changed
-
 - Merge pull request #143 from diggsweden/chore/lint-fix
 - Merge pull request #142 from diggsweden/fix/remove-test
 - Merge pull request #138 from diggsweden/feat/hsm-include-client-id-in-request
@@ -308,39 +148,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Include clientId in HSM request DTOs
 - Merge pull request #136 from diggsweden/test/apikeyverifier
 - Attribute attestation cleanup (#140)
-
-### Fixed
-
-- Fix lint issue
-- Fix tests
-
-
-## [0.5.2] - 2026-05-07
-
-### Added
-
-- Add jacoco info (#134)
-
-### Changed
-
 - Request response logging
 - Bump reusable-ci to v2.8.2
-
-### Fixed
-
-- Exclude path with exact match (#139)
-
-
-## [0.5.1] - 2026-04-24
-
-### Added
-
-- Add opengrep/semgrep ignore file for gitleaks config
-- Add openapi-diff maven plugin (#127)
-- Add openapi linter (#126)
-
-### Changed
-
 - Endpoints for walletKeys and securityEnvelope (#131)
 - Merge pull request #133 from diggsweden/fix/use-main-version-of-reusable-integration
 - Merge pull request #132 from diggsweden/chore/upgrade-java-25
@@ -350,22 +159,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Merge pull request #129 from diggsweden/chore/bump-reusable-integration-workflow
 - Bump gommitlint to 0.9.10, switch rumdl from ubi to aqua
 - Bump reusable-ci to v2.7.9
-
-### Fixed
-
-- Use main version of reusable integration script
-- Bump reusable integration workflow
-
-
-## [0.5.0] - 2026-04-01
-
-### Added
-
-- Add integration test workflow
-- Add ecosystem integration test
-
-### Changed
-
 - Implement code from openapi-generator (#125)
 - Merge pull request #123 from diggsweden/feature/reusable-integration-test
 - Refactor to use reusable ecosystem integration workflow
@@ -377,168 +170,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update reusable-ci to v2.7.3
 - Upgrade to reusable-ci 2.7.1
 - Feat/openapi spec yaml (#118)
-
-### Fixed
-
-- Fix formatting (#124)
-- Fix shellcheck warnings in integration workflow
-- Test(ecosystem): temporarily disable local tests to verify ecosystem
-- Allow any signed format
-
-
-## [0.4.11] - 2026-03-18
-
-### Changed
-
 - Clean up to use reusable ci 2.7
-
-
-## [0.4.10] - 2026-03-18
-
-### Changed
-
 - Use reusable-ci 2.7.0
-
-
-## [0.4.9] - 2026-03-18
-
-### Added
-
-- Add wua controller test
-- Add wua authentication tests
-
-### Changed
-
 - Merge pull request #114 from diggsweden/validate-challenge-for-wua-controller
-
-### Fixed
-
-- Validate wua authentication
-
-
-## [0.4.8] - 2026-03-16
-
-### Added
-
-- Add more challengeResponseAthentication test
-- Add auth challenge test
-- Add no-op version control linter
-
-### Changed
-
 - Merge pull request #110 from diggsweden/feat/remove-keycloak-oidc
 - Merge pull request #113 from diggsweden/fix/use-gommitlint
 - Use gommitlint
 - Merge pull request #112 from diggsweden/build/fail-on-dirty-working-tree
 - Enable version control linter
 - Merge pull request #111 from diggsweden/fix/bump-hadolint-to-v2.14.0
-
-### Fixed
-
-- Run formatting for test
-- Removal of unused mock
-- Bump hadolint to v2.14.0
-
-### Removed
-
-- Remove unnecessary dependencies
-- Remove keycloak and oidc login
-
-
-## [0.4.7] - 2026-03-04
-
-### Fixed
-
-- Use reuseable-ci 2.6.1
-
-
-## [0.4.6] - 2026-03-04
-
-### Removed
-
-- Remove wua/v2 (#108)
-
-
-## [0.4.5] - 2026-02-26
-
-### Removed
-
-- Remove path for accounts v1
-
-
-## [0.4.4] - 2026-02-23
-
-### Changed
-
 - Enable access with api-key in header (#104)
-
-### Removed
-
-- Remove comment
-- Remove wua/v3 endpoint
-
-
-## [0.4.3] - 2026-02-11
-
-### Changed
-
 - Merge pull request #103 from diggsweden/fix/delete-wua-endpoint-v2
-
-### Removed
-
-- Remove wua endpoints with versions
-- Remove wua v2 endpoint
-
-
-## [0.4.2] - 2026-02-05
-
-### Added
-
-- Add WuaService test
-- Add deprecated annotations
-
-### Changed
-
 - Merge pull request #98 from diggsweden/feat/add-wua-v2
 - Clean up errors and warnings from spotbugs etc
 - Send nonce as an optional request parameter to wallet-provider
 - Use wua v2 from wallet-provider
-
-### Fixed
-
-- Handle empty or null nonce when creating wua
-- Format log parameters
-
-
-## [0.4.1] - 2026-02-03
-
-### Added
-
-- Add session id to response body
-
-### Changed
-
 - Merge pull request #99 from diggsweden/renovate/docker.io-library-eclipse-temurin-25-jdk-alpine
 - Update docker.io/library/eclipse-temurin:25-jdk-alpine docker digest to 7ace075
 - Merge pull request #101 from diggsweden/fix/update-just-config
 - Merge pull request #100 from diggsweden/feat/auth-session-id-body
 - Update dependency org.assertj:assertj-core to v3.27.7 [security] (#97)
-
-### Fixed
-
-- License format
-- Increase header length for commit messages
-
-
-## [0.4.0] - 2026-01-26
-
-### Added
-
-- Add swagger header parameters for /account
-- Add auth endpoint to get sessionId deeplink
-
-### Changed
-
 - Merge pull request #92 from diggsweden/feat/jwk
 - Resolve jwk from session info instead of passing it as a parameter
 - Update dependency org.wiremock.integrations:wiremock-spring-boot to v4.0.9 (#96)
@@ -547,55 +198,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Merge pull request #93 from diggsweden/feat/oidc-session-id
 - Update dependency prettier to v3.8.0 (#91)
 - Update dependency com.nimbusds:nimbus-jose-jwt to v10.7 (#89)
-
-### Fixed
-
-- Change method name rename test method and parameter
-- Adjust tests to wua api v3 with necessary refactors
-- Apply autoformat
-- Check if granted as separate method for readability
-- Use Serial annotation
-- Use WalletRuntimeException instead of IllegalArgumentException
-- Enable spotbugs and fix or ignore spotbugs reportings
-
-### Removed
-
-- Remove warnings for exceptions not thrown
-- Remove deprecated PMD rule
-
-
-## [0.3.1] - 2026-01-14
-
-### Added
-
-- Add more verification to controller test and fix typo
-- Add more tests for oidc solution
-
-### Changed
-
 - Clean up comment
 - Refactor class names and packages
 - Clean up configuration options
 - Update java non-major (#86)
 - Update diggsweden/reusable-ci action to v2.6.0 (#84)
-
-### Fixed
-
-- Enable spotbugs and fix or ignore spotbugs reportings
-
-### Removed
-
-- Remove some exclusions and make records more immutable
-
-
-## [0.3.0] - 2026-01-07
-
-### Added
-
-- Add gitleaksignore addition to gitleaksignore
-
-### Changed
-
 - Adapt to spring boot 4
 - Update java major
 - Update java non-major (#83)
@@ -607,26 +214,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change devbase-justkit name, improve dev doc
 - Update justfile and reuseable-ci
 - Describe overwriting of audience in code
-
-### Fixed
-
-- Fix review issues
-- Stop failing on spotbugs errors (until we have fixed them)
-- Fix pmd issues
-- Correct lintwarnings for docs,container
-
-
-## [0.2.9] - 2025-12-08
-
-### Added
-
-- Add configuration for pnr claim
-- Add configuration for private jwt audience
-- Add personal identity number as last name to users
-- Add create account v2 with oidc protection
-
-### Changed
-
 - Refactor config files
 - Update dependency com.puppycrawl.tools:checkstyle to v12.2.0 (#71)
 - Update java non-major to v2.1.0 (#70)
@@ -639,70 +226,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Start one wiremockserver per service
 - Refactor v2 to v1 to match path
 - Update dependency org.springframework.boot:spring-boot-starter-parent to v3.5.8 (#62)
-
-
-## [0.2.8] - 2025-11-24
-
-### Added
-
-- Add header info to api doc
-
-### Changed
-
 - Update diggsweden/reusable-ci action to v2.3.1
 - Update java non-major (#58)
 - Update github actions (#57)
-
-
-## [0.2.7] - 2025-11-20
-
-### Fixed
-
-- Change redis properties to correct spring boot property
-
-
-## [0.2.6] - 2025-11-20
-
-### Added
-
-- Add session id auth to swagger
-
-### Changed
-
 - Replace postgres with valkey in docker-compose
 - Merge pull request #49 from diggsweden/renovate/major-java-major
 - Update java major
-
-
-## [0.2.5] - 2025-11-19
-
-### Changed
-
 - Change in memory session and cache to redis
-
-
-## [0.2.4] - 2025-11-17
-
-### Added
-
-- Add schema for post challenge openapi
-
-### Changed
-
 - Revert: update diggsweden/reusable-ci action to v2.2.3 (#47)
 - Lock file maintenance (#50)
 - Update java non-major (#48)
 - Update diggsweden/reusable-ci action to v2.2.3 (#47)
-
-
-## [0.2.3] - 2025-11-12
-
-### Added
-
-- Add challenge-response login sessions
-
-### Changed
-
 - Merge pull request #41 from diggsweden/renovate/docker.io-library-eclipse-temurin-25-jdk-alpine
 - Update docker.io/library/eclipse-temurin:25-jdk-alpine docker digest to 0c4c630
 - Merge pull request #39 from diggsweden/renovate/cgr.dev-chainguard-jre-latest
@@ -718,16 +252,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update docker.io/library/eclipse-temurin docker tag to v25
 - Merge pull request #35 from diggsweden/renovate/cgr.dev-chainguard-jre-latest
 - Update cgr.dev/chainguard/jre:latest docker digest to 14dc2fa
-
-
-## [0.2.2] - 2025-11-03
-
-### Added
-
-- Add controller to create accounts
-
-### Changed
-
 - Replace public key model with jwk
 - Update actions/setup-java action to v5 (#33)
 - Update actions/checkout action to v5 (#32)
@@ -740,101 +264,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pin sha and version
 - Use base renovate config
 - Adjust schedule
-
-
-## [0.2.1] - 2025-10-16
-
-### Fixed
-
-- Fix typo
-
-
-## [0.2.0] - 2025-10-16
-
-### Added
-
-- Add controller layer and improve test coverage
-- Add attestation api endpoints
-- Add more correct swagger doc
-
-### Changed
-
 - Merge branch 'feat/add_attestations_API'
 - Use reuseable-ci v2
 - Use reusable-ci v1
 - Document style change
-
-
-## [0.1.6] - 2025-10-02
-
-### Fixed
-
-- Adapt jreleaser artfiact name
-
-
-## [0.1.5] - 2025-10-01
-
-### Added
-
-- Add annotation with example post data
-- Add basic validation of WUA request
-- Add swagger auth button and use relative url
-- Add support for front- and backend agreed formats
-- Add spring app with generic downstream service
-
-### Changed
-
 - Merge branch 'feat/swagger-fix'
 - Improve tests and code structure
 - Remap config and clean up autowired
 - Re-label the attribute service client
 - Apply checkstyle to test source
-
-### Fixed
-
-- Fix wallet-provider urls
-- Fix pipeline
-- Open actuator path
-- Markdown linting conflicting with changelog
-
-
-## [0.1.4] - 2025-09-16
-
-### Removed
-
-- Remove cache from jar build
-
-
-## [0.1.3] - 2025-09-16
-
-### Added
-
-- Add missing jar gen to release
-
-
-## [0.1.2] - 2025-09-16
-
-### Removed
-
-- Remove deploy from release yml
-
-
-## [0.1.1] - 2025-09-16
-
-### Added
-
-- Add jreleaser for releases
-
-
-## [0.1.0] - 2025-09-15
-
-### Added
-
-- Add release notes workflow
-- Add initial project structure and tooling
-
-### Changed
-
 - Merge pull request #4 from jahwag/feat/ci-publish-image
 - Use issuer poc release workflows
 - Build image
@@ -842,63 +280,83 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Disable dependency review workflow
 - Initial commit
 
+### Fixed
 
-[0.6.18]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.17..v0.6.18
-[0.6.17]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.16..v0.6.17
-[0.6.16]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.15..v0.6.16
-[0.6.15]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.14..v0.6.15
-[0.6.14]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.13..v0.6.14
-[0.6.13]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.12..v0.6.13
-[0.6.12]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.11..v0.6.12
-[0.6.11]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.10..v0.6.11
-[0.6.10]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.9..v0.6.10
-[0.6.9]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.8..v0.6.9
-[0.6.8]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.7..v0.6.8
-[0.6.7]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.6..v0.6.7
-[0.6.6]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.5..v0.6.6
-[0.6.5]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.4..v0.6.5
-[0.6.4]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.3..v0.6.4
-[0.6.3]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.2..v0.6.3
-[0.6.2]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.1..v0.6.2
-[0.6.1]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.6.0..v0.6.1
-[0.6.0]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.5.8..v0.6.0
-[0.5.8]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.5.7..v0.5.8
-[0.5.7]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.5.6..v0.5.7
-[0.5.6]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.5.5..v0.5.6
-[0.5.5]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.5.4..v0.5.5
-[0.5.4]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.5.2..v0.5.4
-[0.5.2]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.5.1..v0.5.2
-[0.5.1]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.5.0..v0.5.1
-[0.5.0]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.11..v0.5.0
-[0.4.11]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.10..v0.4.11
-[0.4.10]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.9..v0.4.10
-[0.4.9]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.8..v0.4.9
-[0.4.8]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.7..v0.4.8
-[0.4.7]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.6..v0.4.7
-[0.4.6]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.5..v0.4.6
-[0.4.5]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.4..v0.4.5
-[0.4.4]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.3..v0.4.4
-[0.4.3]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.2..v0.4.3
-[0.4.2]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.1..v0.4.2
-[0.4.1]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.4.0..v0.4.1
-[0.4.0]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.3.1..v0.4.0
-[0.3.1]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.3.0..v0.3.1
-[0.3.0]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.2.9..v0.3.0
-[0.2.9]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.2.8..v0.2.9
-[0.2.8]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.2.7..v0.2.8
-[0.2.7]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.2.6..v0.2.7
-[0.2.6]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.2.5..v0.2.6
-[0.2.5]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.2.4..v0.2.5
-[0.2.4]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.2.3..v0.2.4
-[0.2.3]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.2.2..v0.2.3
-[0.2.2]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.2.1..v0.2.2
-[0.2.1]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.2.0..v0.2.1
-[0.2.0]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.1.6..v0.2.0
-[0.1.6]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.1.5..v0.1.6
-[0.1.5]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.1.4..v0.1.5
-[0.1.4]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.1.3..v0.1.4
-[0.1.3]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.1.2..v0.1.3
-[0.1.2]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.1.1..v0.1.2
-[0.1.1]: https://github.com/diggsweden/wallet-client-gateway/compare/v0.1.0..v0.1.1
+- Leave the ecosystem integration workflow out of the trial
+- Fix list indentation in DEVELOPMENT.md
+- Use jackson3 with openapi client generator (#201)
+- Include clientId in device-states response (#195)
+- Raise commit description length limit and shorten maven commit (#186)
+- Revoke account key operations in api-spec (#184)
+- Api spec and log fix (#176)
+- Fix minor spelling errors in README
+- Api component test improvements (#166)
+- Api component tests (#165)
+- Fix formatting (#150)
+- Email and personal identity number are now optional (#145)
+- Fix sha (#149)
+- Fix lint issue
+- Fix tests
+- Exclude path with exact match (#139)
+- Use main version of reusable integration script
+- Bump reusable integration workflow
+- Fix formatting (#124)
+- Fix shellcheck warnings in integration workflow
+- Test(ecosystem): temporarily disable local tests to verify ecosystem
+- Allow any signed format
+- Validate wua authentication
+- Run formatting for test
+- Removal of unused mock
+- Bump hadolint to v2.14.0
+- Use reuseable-ci 2.6.1
+- Handle empty or null nonce when creating wua
+- Format log parameters
+- License format
+- Increase header length for commit messages
+- Change method name rename test method and parameter
+- Adjust tests to wua api v3 with necessary refactors
+- Apply autoformat
+- Check if granted as separate method for readability
+- Use Serial annotation
+- Use WalletRuntimeException instead of IllegalArgumentException
+- Enable spotbugs and fix or ignore spotbugs reportings
+- Enable spotbugs and fix or ignore spotbugs reportings
+- Fix review issues
+- Stop failing on spotbugs errors (until we have fixed them)
+- Fix pmd issues
+- Correct lintwarnings for docs,container
+- Change redis properties to correct spring boot property
+- Fix typo
+- Adapt jreleaser artfiact name
+- Fix wallet-provider urls
+- Fix pipeline
+- Open actuator path
+- Markdown linting conflicting with changelog
+
+### Removed
+
+- Remove obsolete launchpad lote-providers (#243)
+- Remove the optional datatype for generated models (#223)
+- Remove webuild from lote providers config (#222)
+- Remove api diff from maven lifecycle due to ssl issues with env(#210)
+- Remove mise paranoid setting (#200)
+- Remove default values for api-key (#175)
+- Remove old account clients (#162)
+- Remove sonarqube integration
+- Remove unnecessary dependencies
+- Remove keycloak and oidc login
+- Remove wua/v2 (#108)
+- Remove path for accounts v1
+- Remove comment
+- Remove wua/v3 endpoint
+- Remove wua endpoints with versions
+- Remove wua v2 endpoint
+- Remove warnings for exceptions not thrown
+- Remove deprecated PMD rule
+- Remove some exclusions and make records more immutable
+- Remove cache from jar build
+- Remove deploy from release yml
+
+
 
 <!-- generated by git-cliff -->
